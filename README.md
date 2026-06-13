@@ -30,24 +30,24 @@ You guessed it!
 
 Code
 
-number = 5
+import random
+
+number = random.randint(1, 10)
 attempts = 0
 max_attempts = 3
-
 while attempts < max_attempts:
-    guess = int(input("Enter a number from 1 to 10: "))
+    guess = int(input("Введите число от 1 до 10:"))
     attempts += 1
     if guess == number:
-        print("You guessed it!")
+        print("Вы угадали число!")
         break
     elif guess < number:
-        print("The number is higher.")
+        print("Загаданное число больше.")
     elif guess > number:
-        print("The number is lower.")
-    print(f"Attempts left: {max_attempts - attempts}")
-
+        print("Загаданное число меньше.")
+    print(f"Осталось {max_attempts - attempts} попыток.")
 if attempts == max_attempts and guess != number:
-    print(f"You lost. The number was {number}")
+    print(f"У вас закончились попытки, было загадано число {number}")
 
 Author
 
@@ -91,12 +91,13 @@ MIT
 
 Код
 
-number = 5
+import random
+
+number = random.randint(1, 10)
 attempts = 0
 max_attempts = 3
-
 while attempts < max_attempts:
-    guess = int(input("Введите число от 1 до 10: "))
+    guess = int(input("Введите число от 1 до 10:"))
     attempts += 1
     if guess == number:
         print("Вы угадали число!")
@@ -106,14 +107,12 @@ while attempts < max_attempts:
     elif guess > number:
         print("Загаданное число меньше.")
     print(f"Осталось {max_attempts - attempts} попыток.")
-
 if attempts == max_attempts and guess != number:
     print(f"У вас закончились попытки, было загадано число {number}")
 
 Автор
 
 sunlightonnight
-
 Лицензия
 
 MIT
