@@ -113,6 +113,7 @@ if attempts == max_attempts and guess != number:
 Автор
 
 sunlightonnight
+
 Лицензия
 
 MIT
