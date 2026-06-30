@@ -3,22 +3,20 @@ import random
 number = random.randint(1, 10)
 attempts = 0
 max_attempts = 3
-
-print("Угадай число от 1 до 10. У тебя 3 попытки.")
-
 while attempts < max_attempts:
-    guess = int(input("Введите число: "))
+    try:
+        guess = int(input("Введите число от 1 до 10:"))
+    except ValueError:
+        print("Ошибка! Нужно ввести число, а не буквы. Попробуй снова.")
+        continue
     attempts += 1
-    
     if guess == number:
-        print(f"Поздравляю! Ты угадал за {attempts} попытки(у)!")
+        print("Вы угадали число!")
         break
     elif guess < number:
-        print("Загаданное число БОЛЬШЕ")
-    else:
-        print("Загаданное число МЕНЬШЕ")
-    
-    print(f"Осталось попыток: {max_attempts - attempts}")
-
+        print("Загаданное число больше.")
+    elif guess > number:
+        print("Загаданное число меньше.")
+    print(f"Осталось {max_attempts - attempts} попыток.")
 if attempts == max_attempts and guess != number:
-    print(f"Ты проиграл! Было загадано число {number}")
+    print(f"У вас закончились попытки, было загадано число {number}")
